@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MI AMOR</title>
+</head>
+<style>
+    body {
+        background-color: black;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+
+
+        max-width: 1220px;
+        box-sizing: border-box;
+        min-height: 100vh;
+        width: 100%;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        width: clamp(500px, 100vw, 1220px);
+
+
+    }
+
+    h1 {
+        color: pink;
+        text-align: center;
+        font-size: 36px;
+        margin-top: 20px;
+        text-shadow: 0 0 8px #ffb6c1, 0 0 16px #ffb6c1aa;
+        font-family: 'Brush Script MT', cursive;
+        font-weight: bold;
+
+    }
+
+    p {
+        color: pink;
+        font-size: 18px;
+        line-height: 1.6;
+        margin: 10px;
+        text-align: justify;
+        width: clamp(400px, 10vw, 1220px);
+        text-align: center;
+        margin-left: 70px;
+        font-style: oblique;
+    }
+
+    img {
+        margin: 20px auto;
+        height: clamp(100px, 50vh, 400px);
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        width: clamp(100px, 100vw, 400px);
+        height: 400px;
+        object-fit: cover;
+        /* Ensures the image covers the heart shape */
+        clip-path: polygon(-41% 0, 50% 91%, 141% 0);
+        /* Main triangular part of the heart */
+        /* For the rounded top parts, you can use mask properties as a fallback or in conjunction */
+        /* Fallback for older browsers or for more precise control over the rounded top */
+        -webkit-mask:
+            radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+            radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+        mask:
+            radial-gradient(at 70% 31%, #000 29%, #0000 30%),
+            radial-gradient(at 30% 31%, #000 29%, #0000 30%),
+            linear-gradient(#000 0 0) bottom/100% 50% no-repeat;
+
+    }
+
+    .container {
+        width: clamp(500px, 100vw, 1000px);
+        margin: auto;
+        padding: 20px;
+        background-color: rgba(255, 192, 203, 0.1);
+
+        box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+
+        z-index: 1;
+
+        width: 100%;
+        position: relative;
+
+
+    }
+
+    button {
+        background-color: pink;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+        margin: 20px auto;
+        display: block;
+        width: 200px;
+        border-radius: 40px;
+
+    }
+
+    audio {
+        margin-top: 8px;
+        width: 150px;
+        outline: none;
+        border-radius: 30px;
+        box-shadow: 0 4px 8px rgba(255, 192, 203, 0.2);
+        background-color: pink;
+    }
+</style>
+
+
+<body>
+    <div class="container">
+
+        <h1>Mi Amor</h1>
+        <p>
+            My Dearest Love,
+
+            From the moment our paths crossed, my life has been illuminated by the radiant light of your presence. Your
+            smile, a beacon of joy, brightens even my darkest days, and your laughter is the sweetest melody that
+            resonates in my heart.
+
+            Every moment spent with you is a treasure I hold dear. Your kindness, compassion, and unwavering support
+            have shown me the true meaning of love. With you, I have found a partner who not only understands me but
+            also inspires me to be the best version of myself.
+
+            As we journey through life together, I am filled with gratitude for the love we share. You are my confidant,
+            my rock, and my greatest adventure. I look forward to creating countless memories with you, building a
+            future filled with love, laughter, and endless possibilities.
+
+            Thank you for being the extraordinary person that you are and for loving me so completely. I am eternally
+            grateful to have you by my side.
+
+            With all my love,
+            [Tavish]
+        </p>
+        <img src="babe1.jpg" alt="">
+        <img src="babe2.jpg" alt="">
+        <img src="babe3.jpg" alt="">
+        <img src="babe4.jpg" alt="">
+        <img src="babe5.jpg" alt="">
+        <img src="babe6.jpg" alt="">
+        <img src="babe7.jpg" alt="">
+
+
+        <button id="showCardBtn"
+            onclick="document.getElementById('card').style.display='block'; this.style.display='none'">click me</button>
+
+        <div id="card"
+            style="display:none; background: rgba(255,192,203,0.95); color:#000; padding:18px; border-radius:12px; width:clamp(400px,80%,360px); margin:16px auto; box-shadow:0 8px 24px rgba(255,182,193,0.25); text-align:center;">
+            <h4 style="margin:0 0 8px;color:deeppink">poem for u</h4>
+            <p style="margin:0 0 12px; font-style:italic; color:deeppink">If u asked me for forever,
+                I promise i'd stay eventhough i know those are just words,
+                But with my actions they'll potray,
+                You deserve the love story for the ages,
+                And i want to be written on all of those pages,
+            </p>
+            <button
+                onclick="document.getElementById('card').style.display='none'; document.getElementById('showCardBtn').style.display='inline-block'">Close</button>
+        </div>
+
+        </p>
+        <button>Music
+            <audio controls>
+                <source src="Iris Jean - Those Eyes (Official Music Video) - 128.mp3">
+
+            </audio>
+        </button>
+
+
+
+
+    </div>
+
+    <script>
+        // Create stars and animate them emerging from the background
+        const numStars = 80;
+        for (let i = 0; i < numStars; i++) {
+            const star = document.createElement('div');
+            star.style.position = 'fixed';
+            star.style.top = `${Math.random() * 100}vh`;
+            star.style.left = `${Math.random() * 100}vw`;
+            star.style.width = `${Math.random() * 2 + 1}px`;
+            star.style.height = star.style.width;
+            star.style.background = 'white';
+            star.style.borderRadius = '50%';
+            star.style.opacity = 0;
+            star.style.pointerEvents = 'none';
+            star.style.zIndex = 0;
+            star.style.boxShadow = `0 0 8px 2px #fff8, 0 0 20px 4px #ffb6c1aa`;
+            document.body.appendChild(star);
+
+            // Animate star fade-in and twinkle
+            setTimeout(() => {
+                star.style.transition = 'opacity 2s';
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+            }, Math.random() * 2000);
+
+            // Twinkle effect
+            setInterval(() => {
+                star.style.opacity = Math.random() * 0.7 + 0.3;
+            }, 2000 + Math.random() * 2000);
+        }
+        function animateStars() {
+            const stars = document.querySelectorAll('body > div[style*="border-radius"]');
+            stars.forEach((star, i) => {
+                // Get current position
+                let top = parseFloat(star.style.top);
+                let left = parseFloat(star.style.left);
+
+                // Move stars slowly downward and slightly sideways
+                top += 0.03 + Math.sin(Date.now() / 1000 + i) * 0.01;
+                left += Math.sin(Date.now() / 1500 + i) * 0.02;
+
+                // Wrap around if out of bounds
+                if (top > 100) top = 0;
+                if (left > 100) left = 0;
+                if (left < 0) left = 100;
+
+                star.style.top = `${top}vh`;
+                star.style.left = `${left}vw`;
+            });
+            requestAnimationFrame(animateStars);
+        }
+        animateStars();
+        const numHearts = 20;
+        for (let i = 0; i < numHearts; i++) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '❤';
+            heart.style.position = 'fixed';
+            heart.style.top = `${Math.random() * 100}vh`;
+            heart.style.left = `${Math.random() * 100}vw`;
+            heart.style.fontSize = `${Math.random() * 24 + 18}px`;
+            heart.style.color = 'pink';
+            heart.style.opacity = 0;
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = 1;
+            heart.style.filter = 'drop-shadow(0 0 8px #ffb6c1)';
+            document.body.appendChild(heart);
+
+            // Animate heart fade-in
+            setTimeout(() => {
+                heart.style.transition = 'opacity 2s';
+                heart.style.opacity = Math.random() * 0.6 + 0.4;
+            }, Math.random() * 2000);
+
+            // Twinkle effect
+            setInterval(() => {
+                heart.style.opacity = Math.random() * 0.6 + 0.4;
+            }, 2500 + Math.random() * 2000);
+        }
+
+        function animateHearts() {
+            const hearts = Array.from(document.querySelectorAll('body > div'))
+                .filter(div => div.innerHTML === '❤');
+            hearts.forEach((heart, i) => {
+                let top = parseFloat(heart.style.top);
+                let left = parseFloat(heart.style.left);
+
+                // Move hearts slowly upward and sideways
+                top -= 0.015 + Math.cos(Date.now() / 1200 + i) * 0.01;
+                left += Math.sin(Date.now() / 1800 + i) * 0.03;
+
+                // Wrap around if out of bounds
+                if (top < 0) top = 100;
+                if (left > 100) left = 0;
+                if (left < 0) left = 100;
+
+                heart.style.top = `${top}vh`;
+                heart.style.left = `${left}vw`;
+            });
+            requestAnimationFrame(animateHearts);
+        }
+        animateHearts();
+        const paragraph = document.querySelector('p');
+        const originalText = paragraph.textContent;
+        paragraph.textContent = '';
+        const words = originalText.split(' ');
+        let wordIndex = 0;
+
+        function typeWord() {
+            if (wordIndex < words.length) {
+                paragraph.textContent += (wordIndex === 0 ? '' : ' ') + words[wordIndex];
+                wordIndex++;
+                setTimeout(typeWord, 200);
+            }
+        }
+        typeWord();
+        const images = Array.from(document.querySelectorAll('.container img'));
+        let currentImg = 0;
+
+        // Hide all images initially
+        images.forEach(img => img.style.display = 'none');
+
+        // Show the first image
+        if (images.length > 0) images[0].style.display = 'block';
+
+        setInterval(() => {
+            images[currentImg].style.display = 'none';
+            currentImg = (currentImg + 1) % images.length;
+            images[currentImg].style.display = 'block';
+        }, 30000);
+        const typedParagraph = document.querySelector('.typed-text');
+        const typedText = typedParagraph.textContent;
+        typedParagraph.textContent = '';
+        let charIndex = 0;
+
+        function typeChar() {
+            if (charIndex < typedText.length) {
+                typedParagraph.textContent += typedText[charIndex];
+                charIndex++;
+                setTimeout(typeChar, 40);
+            }
+        }
+        typeChar();
+        images.forEach(img => {
+            img.style.boxShadow = '0 8px 24px 6px #ffb6c1cc, 0 2px 16px 4px #fff8';
+        });
+        
+        
+        
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
