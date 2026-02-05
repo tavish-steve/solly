@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Be My Valentine 💖</title>
+
+<style>
+* { box-sizing: border-box; }
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    background: radial-gradient(circle at top, #1a0033, #000010);
+    overflow-x: hidden;
+    font-family: 'Comic Sans MS', cursive;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 700px;
+}
+
+h1 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #ffb6c1;
+    text-shadow: 0 0 15px hotpink;
+}
+
+/* YES button */
+button {
+    padding: 14px 35px;
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+#yes {
+    background: linear-gradient(45deg, #ff1493, #ff69b4);
+    color: white;
+    box-shadow: 0 0 18px #ff1493;
+}
+
+/* Pink stars */
+.star {
+    position: absolute;
+    font-size: clamp(12px, 2vw, 20px);
+    color: #ff9ad5;
+    animation: float 6s infinite linear;
+    text-shadow: 0 0 10px hotpink;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-120vh); opacity: 0; }
+}
+
+/* Full-cover two-image frame */
+.frame {
+    width: min(90vw, 500px);
+    height: min(80vw, 350px);
+    margin: 40px auto;
+    border-radius: 22px;
+    overflow: hidden;
+    border: 4px solid #ff69b4;
+    box-shadow: 0 0 35px hotpink;
+    display: flex;
+}
+
+/* Each half fully fills its side */
+.half {
+    width: 50%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+.half img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    animation: fadeZoom 10s ease-in-out infinite;
+}
+
+/* Slight delay for right image for smooth offset */
+.right img {
+    animation-delay: 1.5s;
+}
+
+/* Fade + gentle zoom */
+@keyframes fadeZoom {
+    0% { transform: scale(1); opacity: 0; }
+    15% { opacity: 1; }
+    85% { transform: scale(1.08); opacity: 1; }
+    100% { transform: scale(1.1); opacity: 0; }
+}
+
+/* Teddy bears */
+.teddy {
+    position: fixed;
+    bottom: 10px;
+    font-size: clamp(30px, 6vw, 60px);
+    animation: dance 1s infinite alternate;
+}
+
+@keyframes dance {
+    from { transform: translateY(0); }
+    to { transform: translateY(-25px); }
+}
+
+#surprise { display: none; }
+
+h2 {
+    font-size: clamp(1.3rem, 4vw, 2rem);
+    color: #ffd1dc;
+    text-shadow: 0 0 10px hotpink;
+}
+</style>
+</head>
+
+<body>
+
+<audio id="music" src="Jay Melody - Wa Peke Yangu (Official Video) - 128.mp3"></audio>
+
+<div class="container">
+    <h1 id="question">💘 Will you be my Valentine? 💘</h1>
+
+    <button id="yes" onclick="yesClicked()">YES 💖</button>
+
+    <div id="surprise">
+        <div class="frame">
+            <!-- Left half -->
+            <div class="half left">
+                <img src="WhatsApp Image 2026-02-05 at 9.45.10 PM (3).jpeg"alt="">
+            </div>
+
+            <!-- Right half -->
+            <div class="half right">
+                <img src="WhatsApp Image 2026-02-05 at 9.45.11 PM (2).jpeg"alt="">
+            
+            </div>
+        </div>
+        <h2>Two hearts, one story 💕</h2>
+    </div>
+</div>
+
+<script>
+// Pink floating stars
+const stars = ["⭐", "✨", "💗"];
+for (let i = 0; i < 40; i++) {
+    let s = document.createElement("div");
+    s.className = "star";
+    s.innerHTML = stars[Math.floor(Math.random() * stars.length)];
+    s.style.left = Math.random() * 100 + "vw";
+    s.style.top = Math.random() * 100 + "vh";
+    s.style.animationDuration = (Math.random() * 4 + 4) + "s";
+    document.body.appendChild(s);
+}
+
+// YES clicked
+function yesClicked() {
+    document.getElementById("music").play();
+    document.getElementById("yes").style.display = "none";
+    document.getElementById("question").innerText = "💖 Forever starts now 💖";
+    document.getElementById("surprise").style.display = "block";
+
+    // Dancing teddy bears
+    for (let i = 0; i < 5; i++) {
+        let t = document.createElement("div");
+        t.className = "teddy";
+        t.innerHTML = "🧸";
+        t.style.left = (i * 20 + 5) + "vw";
+        document.body.appendChild(t);
+    }
+}
+</script>
+
+</body>
+</html>
+
+
